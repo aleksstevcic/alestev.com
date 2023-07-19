@@ -52,6 +52,8 @@ jobs:
         data: '{"site":"alestev.com"}'
         # Custom HTTP Headers
         customHeaders: '{"TOKEN":"${{secrets.N8N_TOKEN}}"}'
+        #timeout in milliseconds
+        timeout: 30000
         # Prevent this Action to fail if the request respond without an response
         #preventFailureOnNoResponse: false
         # Escape newlines in data string content
