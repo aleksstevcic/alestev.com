@@ -1,7 +1,15 @@
 #this will build the docker container, then restart the docker instance
 
+while getopts token: flag
+do
+    case "${flag}" in
+        token) apikey=${OPTARG};;
+    esac
+done
+
+echo $apikey
+
 #variables. interfaces with portainer
-apikey="ptr_oFozbXfW6ADXChdqujDuzoAC/KgAU2Bsgozhgg9eFuc="
 stackid="23"
 
 #build with the dockerfile in the same folder, and name it alestevcom
