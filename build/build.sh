@@ -3,15 +3,23 @@
 #this will build the docker container, then restart the docker instance
 apikey=""
 
-while getopts 't:' OPTION; do
-  case "$OPTION" in
+#https://stackoverflow.com/questions/14447406/bash-shell-script-check-for-a-flag-and-grab-its-value
+while getopts ":t:" opt; do
+  case $opt in
     t)
-      echo "token specified"
-      $apikey = "$OPTARG"
+      echo "-a was triggered, Parameter: $OPTARG" >&2
+      $apikey=$OPTARG
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
       ;;
   esac
 done
-shift "$(($OPTIND -1))"
 
 echo $apikey
 
