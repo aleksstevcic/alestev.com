@@ -49,9 +49,9 @@ jobs:
         # Content Type
         contentType: "application/json"
         # Request Body as JSON String
-        data: "{}"
+        data: "{['alestev.com']}"
         # Custom HTTP Headers
-        customHeaders: "TOKEN=${{secrets.N8N_TOKEN}}"
+        customHeaders: "{TOKEN:${{secrets.N8N_TOKEN}}}"
         # Prevent this Action to fail if the request respond without an response
         preventFailureOnNoResponse: false
         # Escape newlines in data string content
