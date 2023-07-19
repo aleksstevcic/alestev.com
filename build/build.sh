@@ -5,7 +5,7 @@ apikey="ptr_oFozbXfW6ADXChdqujDuzoAC/KgAU2Bsgozhgg9eFuc="
 stackid="23"
 
 #build with the dockerfile in the same folder, and name it alestevcom
-cd ..
+#should be run within the root alestev.com folder
 docker build -t alestevcom --no-cache .
 
 #stop compose file that runs this server
