@@ -35,7 +35,7 @@ jobs:
     - name: shell
       run: |
         echo $ALESTEV_URL
-        echo ${{vars.N8N_TOKEN}}
+        echo ${{secrets.N8N_TOKEN}}
         
     - name: GitHub Action for HTTP Requests
   # You may pin to the exact commit or the version.
@@ -43,7 +43,7 @@ jobs:
       uses: ArthurYdalgo/http-request-action@1.12.1
       with:
         # Request URL
-        url: "https://alestev.com/api/n8n/update-site"
+        url: $ALESTEV_URL
         # Request Method
         method: POST
         # Content Type
@@ -51,7 +51,7 @@ jobs:
         # Request Body as JSON String
         data: "{}"
         # Custom HTTP Headers
-        customHeaders: ""
+        customHeaders: "TOKEN=${{secrets.N8N_TOKEN}}"
         # Prevent this Action to fail if the request respond without an response
         preventFailureOnNoResponse: false
         # Escape newlines in data string content
