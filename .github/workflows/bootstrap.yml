@@ -26,7 +26,7 @@ on:
   workflow_dispatch:
 
 env:
-  ALESTEV_URL: "https://alestev.com/api/n8n/test/update-site"
+  ALESTEV_URL: "https://alestev.com/api/n8n/update-site"
   
 jobs:
   send-http-request:
