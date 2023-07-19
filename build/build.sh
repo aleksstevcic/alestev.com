@@ -1,11 +1,17 @@
-#this will build the docker container, then restart the docker instance
+#!/bin/bash
 
-while getopts token: flag
-do
-    case "${flag}" in
-        token) apikey=${OPTARG};;
-    esac
+#this will build the docker container, then restart the docker instance
+apikey=""
+
+while getopts 't:' OPTION; do
+  case "$OPTION" in
+    t)
+      echo "token specified"
+      $apikey = "$OPTARG"
+      ;;
+  esac
 done
+shift "$(($OPTIND -1))"
 
 echo $apikey
 
