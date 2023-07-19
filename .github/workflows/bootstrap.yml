@@ -23,6 +23,7 @@ name: Deploy Node.js project to Azure Function App
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
 
 env:
   ALESTEV_URL: "https://alestev.com/api/n8n/update-site"
