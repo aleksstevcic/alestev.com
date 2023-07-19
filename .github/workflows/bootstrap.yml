@@ -34,8 +34,7 @@ jobs:
     steps:
     - name: shell
       run: |
-        echo $ALESTEV_URL
-        echo ${{secrets.N8N_TOKEN}}
+        echo "running!"
         
     - name: GitHub Action for HTTP Requests
   # You may pin to the exact commit or the version.
@@ -43,7 +42,7 @@ jobs:
       uses: ArthurYdalgo/http-request-action@1.12.1
       with:
         # Request URL
-        url: "https://alestev.com/api/n8n/update-site"
+        url: ${{env.ALESTEV_URL}}
         # Request Method
         method: POST
         # Content Type
