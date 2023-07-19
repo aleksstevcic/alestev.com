@@ -43,7 +43,7 @@ jobs:
       uses: ArthurYdalgo/http-request-action@1.12.1
       with:
         # Request URL
-        url: $ALESTEV_URL
+        url: "https://alestev.com/api/n8n/update-site"
         # Request Method
         method: POST
         # Content Type
