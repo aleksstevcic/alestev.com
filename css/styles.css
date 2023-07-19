@@ -1,0 +1,231 @@
+body{
+    background-color:rgb(25, 26, 26) !important;
+    color: rgb(213, 213, 213);
+    font-size: 18px;
+    font-family: calibri;
+    text-shadow: 2px 3px 10px rgba(24, 24, 24, 0.5);
+}
+
+.main{
+    text-align: center;
+}
+
+h1, h2{
+    margin: 0 auto;
+    color: rgb(214, 214, 214);
+}
+
+h1{
+    background-color: #35A2CA;
+    background-image: linear-gradient(13deg, #4374BC, #74BC43);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+h2{
+    background-color: #c65481;
+    background-image: linear-gradient(193deg, #c65481, #5493f0);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.maintitle{
+    font-size: 60px;
+    margin-top: 50px
+}
+
+.titleheader{
+    margin-top: 50px;
+}
+
+.tablediv{
+    width: 80%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top:10px;
+}
+.table{
+    
+}
+
+.card{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.cardtext{
+    position: absolute;
+    color: white;
+    z-index: 1000;
+    pointer-events: none;
+    text-shadow: 0px 0px 6px rgb(0, 0, 0);
+}
+
+#overseerr .cardtext{
+    top: 30%;
+}
+
+#nextcloud .cardtext{
+    top: 7%;
+}
+
+#homeassistant .cardtext{
+    top: 30%;
+    color: rgb(27, 35, 41);
+    text-shadow: 0px 0px 6px rgb(94, 94, 94);
+}
+
+#nextcloud{
+    top: 45px;
+}
+
+.cardheader {
+    display: inline-block;
+    font-size: 28px;
+}
+
+.carddesc{
+    display: inline-block;
+    top: 10%;
+    font-size: 16px;
+    width: 75%;
+}
+
+
+
+.icon:hover + .cardtext {
+    animation-name: cardtexton;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.icon:not(:hover) + .cardtext{
+    animation-name: cardtextoff;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.icon:hover{
+    animation-name: cardhoveron;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.icon:not(:hover){
+    animation-name: cardhoveroff;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+td{
+    display: inline-block;
+    margin: 10px;
+}
+
+.middlemain{
+    margin-top: 50px;
+}
+
+.bottommain{
+    margin-top: 25px;
+}
+
+@keyframes cardtexton{
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes cardtextoff{
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0%;
+    }
+}
+
+@keyframes cardhoveron{
+    from {
+        filter: drop-shadow(0px 0px 10px rgb(22, 22, 22));
+        transform:scale(1,1);
+    }
+    to {
+        filter: drop-shadow(0px 0px 15px rgb(130, 108, 108));
+        transform:scale(1.1,1.1);
+    }
+}
+
+@keyframes cardhoveroff{
+    from {
+        filter: drop-shadow(0px 0px 15px rgb(130, 108, 108));
+        transform:scale(1.1,1.1);
+    }
+    to {
+        filter: drop-shadow(0px 0px 10px rgb(22, 22, 22));
+        transform:scale(1,1);
+    }
+}
+
+@keyframes hoveron{
+    from {
+        transform:scale(1,1);
+        filter: drop-shadow(0px 0px 20px #000000);
+        border: 3px rgba(255,255,255,0) solid;
+    }
+    to {
+        transform:scale(1.02,1.02);
+        filter: drop-shadow(0px 0px 35px #FFFFFF);
+        border: 3px rgba(255,255,255,1) solid;
+    }
+}
+
+@keyframes hoveroff{
+    from {
+        transform:scale(1.02,1.02);
+        filter: drop-shadow(0px 0px 35px #FFFFFF);
+        border: 3px rgba(255,255,255,1) solid;
+    }
+    to {
+        transform:scale(1,1);
+        filter: drop-shadow(0px 0px 20px #000000);
+        border: 3px rgba(255,255,255,0) solid;
+    }
+}
+
+iframe{
+    border-width: 0px;
+    border-radius: 26px;
+}
+
+iframe:hover{
+    animation-name: hoveron;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+iframe:not(:hover){
+    animation-name: hoveroff;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
