@@ -18,7 +18,7 @@
 #
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples/tree/master/FunctionApp
 
-name: Deploy Node.js project to Azure Function App
+name: Deploy to alestev.com
 
 on:
   push:
@@ -49,7 +49,7 @@ jobs:
         # Content Type
         contentType: "application/json"
         # Request Body as JSON String
-        data: '{"sites":["alestev.com"]}'
+        data: '{"site":"alestev.com"}'
         # Custom HTTP Headers
         customHeaders: '{"TOKEN":"${{secrets.N8N_TOKEN}}"}'
         # Prevent this Action to fail if the request respond without an response
