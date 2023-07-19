@@ -32,6 +32,11 @@ jobs:
     runs-on: ubuntu-latest # For Linux, use ubuntu-latest
     environment: dev
     steps:
+    - name: shell
+      run: |
+        echo $ALESTEV_URL
+        echo ${{vars.N8N_TOKEN}}
+        
     - name: GitHub Action for HTTP Requests
   # You may pin to the exact commit or the version.
   # uses: ArthurYdalgo/http-request-action@1cb260a7a426b969d3045bcb08fc2fe0b94918e6
