@@ -7,8 +7,8 @@ apikey=""
 while getopts ":t:" opt; do
   case $opt in
     t)
-      echo "-a was triggered, Parameter: $OPTARG" >&2
-      $apikey=$OPTARG
+      echo "-t was triggered, Parameter: $OPTARG" >&2
+      apikey=$OPTARG
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -20,8 +20,6 @@ while getopts ":t:" opt; do
       ;;
   esac
 done
-
-echo $apikey
 
 #variables. interfaces with portainer
 stackid="23"
