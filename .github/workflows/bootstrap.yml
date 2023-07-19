@@ -47,7 +47,7 @@ jobs:
         # Request Method
         method: POST
         # Content Type
-        #contentType: "application/json"
+        contentType: "application/json"
         # Request Body as JSON String
         #data: '{["alestev.com"]}'
         # Custom HTTP Headers
