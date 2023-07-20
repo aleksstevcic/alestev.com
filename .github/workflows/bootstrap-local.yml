@@ -37,8 +37,8 @@ jobs:
       run: |
 
         #needs to run as root
-        apikey=${{secrets:PORTAINER_API_KEY}}
-        gitkey=${{secrets:GIT_KEY}}
+        apikey=${{secrets.PORTAINER_API_KEY}}
+        gitkey=${{secrets.GIT_KEY}}
 
         git clone https://aleksstevcic:$gitkey@github.com/aleksstevcic/alestev.com
         cd alestev.com
