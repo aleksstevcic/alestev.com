@@ -40,6 +40,10 @@ jobs:
         apikey=${{secrets.PORTAINER_API_KEY}}
         gitkey=${{secrets.GIT_KEY}}
 
+        #clear working folder
+        rm -rf ./*
+
+        #clone repository
         git clone https://aleksstevcic:$gitkey@github.com/aleksstevcic/alestev.com
         cd alestev.com
         
