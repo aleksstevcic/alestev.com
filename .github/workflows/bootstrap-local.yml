@@ -35,5 +35,31 @@ jobs:
     steps:
     - name: shell
       run: |
-        echo "figuring out where the working directory is"
-        pwd
+      
+        #needs to run as root
+        apikey={{secrets:PORTAINER_API_KEY}}
+        gitkey={{secrets:GIT_KEY}}
+
+        git clone https://aleksstevcic:$gitkey@github.com/aleksstevcic/alestev.com
+        cd alestev.com
+        
+        #variables. interfaces with portainer
+        stackid="23"
+
+        #build with the dockerfile in the same folder, and name it alestevcom
+        #should be run within the root alestev.com folder
+        docker build -t alestevcom --no-cache .
+
+        #stop compose file that runs this server
+        curl -X POST --insecure -I "https://localhost:9443/api/stacks/$stackid/stop" \
+        -H "X-API-Key:$apikey"
+
+        #wait a second
+        sleep 1
+
+        #start compose file that runs this server
+        curl -X POST --insecure -I "https://localhost:9443/api/stacks/$stackid/start" \
+        -H "X-API-Key:$apikey"
+
+        #prune any untagged images
+        yes | docker image prune
