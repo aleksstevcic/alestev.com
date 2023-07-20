@@ -29,16 +29,16 @@ env:
   ALESTEV_URL: "https://alestev.com/api/n8n/update-site"
   
 jobs:
-  send-http-request:
+  deploy:
     runs-on: self-hosted
     environment: dev
     steps:
     - name: shell
       run: |
-      
+
         #needs to run as root
-        apikey={{secrets:PORTAINER_API_KEY}}
-        gitkey={{secrets:GIT_KEY}}
+        apikey=${{secrets:PORTAINER_API_KEY}}
+        gitkey=${{secrets:GIT_KEY}}
 
         git clone https://aleksstevcic:$gitkey@github.com/aleksstevcic/alestev.com
         cd alestev.com
