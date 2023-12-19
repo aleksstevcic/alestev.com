@@ -84,8 +84,16 @@ h2{
     text-shadow: 0px 0px 6px rgb(94, 94, 94);
 }
 
+#pterodactyl .cardtext{
+    top: 40%;
+}
+
 #nextcloud{
     top: 45px;
+}
+
+#pterodactyl{
+    top: 0px;
 }
 
 .cardheader {
